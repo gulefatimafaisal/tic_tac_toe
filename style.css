@@ -1,0 +1,77 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #2e2e2e; /* Dark background for the page */
+}
+
+.container {
+    text-align: center;
+    background: #ffffff; /* Cute background color for the container */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: fit-content;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #ff69b4; /* Cute pink color for the header */
+    margin-bottom: 20px;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    background-color: #f0f8ff; /* Light, cute color for cells */
+    border: 2px solid #ff1493; /* Bright accent color for cell borders */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cell:hover {
+    background-color: #ffebee; /* Light pink color on hover */
+    transform: scale(1.05);
+}
+
+#restartButton {
+    background-color: #ff1493; /* Bright pink button color */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#restartButton:hover {
+    background-color: #ff69b4; /* Lighter pink on hover */
+    transform: scale(1.05);
+}
+
+#status {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff1493; /* Bright pink for status text */
+}
+
