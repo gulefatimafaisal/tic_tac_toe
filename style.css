@@ -5,37 +5,38 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: #2e2e2e; /* Dark background for the page */
+    background: #2e2e2e; 
 }
 
 .container {
     text-align: center;
-    background: #ffffff; /* Cute background color for the container */
+    background: #ffffff; 
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     padding: 20px;
-    width: fit-content;
+    width: 90%; 
+    max-width: 400px; 
 }
 
 h1 {
     font-size: 2.5rem;
-    color: #ff69b4; /* Cute pink color for the header */
+    color: #ff69b4; 
     margin-bottom: 20px;
 }
 
 #game-board {
     display: grid;
-    grid-template-columns: repeat(3, 120px);
-    grid-template-rows: repeat(3, 120px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 10px;
     margin: 20px auto;
+    max-width: 360px; 
+    width: 100%;
 }
 
 .cell {
-    width: 120px;
-    height: 120px;
-    background-color: #f0f8ff; /* Light, cute color for cells */
-    border: 2px solid #ff1493; /* Bright accent color for cell borders */
+    background-color: #f0f8ff; 
+    border: 2px solid #ff1493;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -45,15 +46,16 @@ h1 {
     color: #333;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
+    aspect-ratio: 1; 
 }
 
 .cell:hover {
-    background-color: #ffebee; /* Light pink color on hover */
+    background-color: #ffebee; 
     transform: scale(1.05);
 }
 
 #restartButton {
-    background-color: #ff1493; /* Bright pink button color */
+    background-color: #ff1493; 
     color: #ffffff;
     border: none;
     border-radius: 8px;
@@ -64,7 +66,7 @@ h1 {
 }
 
 #restartButton:hover {
-    background-color: #ff69b4; /* Lighter pink on hover */
+    background-color: #ff69b4; 
     transform: scale(1.05);
 }
 
@@ -72,6 +74,48 @@ h1 {
     margin-top: 10px;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #ff1493; /* Bright pink for status text */
+    color: #ff1493; 
 }
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem; 
+    }
+
+    .cell {
+        font-size: 1.5rem; 
+    }
+
+    #restartButton {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    #status {
+        font-size: 1rem; 
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    h1 {
+        font-size: 2rem; 
+    }
+
+    .cell {
+        font-size: 1.75rem; 
+    }
+
+    #restartButton {
+        font-size: 15px;
+        padding: 9px 18px;
+    }
+
+    #status {
+        font-size: 1.1rem;
+    }
+}
+
+
+
 
