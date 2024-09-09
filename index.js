@@ -41,12 +41,12 @@ function computerMove() {
     // Check for winning move
     const winningMove = findBestMove('O');
     if (winningMove !== null) {
-        emptyCells[winningMove].textContent = 'O';
+        cells[winningMove].textContent = 'O'; // Fix: cells[winningMove] should be updated directly
     } else {
         // Check for blocking move
         const blockingMove = findBestMove('X');
         if (blockingMove !== null) {
-            emptyCells[blockingMove].textContent = 'O';
+            cells[blockingMove].textContent = 'O'; // Fix: cells[blockingMove] should be updated directly
         } else {
             // Random move
             const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
@@ -74,7 +74,7 @@ function findBestMove(player) {
         const emptyCells = combination.filter(index => !cells[index].textContent);
 
         if (cellsToCheck.filter(cell => cell === player).length === 2 && emptyCells.length === 1) {
-            return combination.find(index => !cells[index].textContent);
+            return emptyCells[0]; // Fix: return the actual index of the empty cell
         }
     }
     return null;
@@ -103,3 +103,4 @@ restartButton.addEventListener('click', restartGame);
 
 // Initialize game status
 statusElement.textContent = "Your Turn";
+
